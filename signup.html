@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up | Pet Adoption</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .signup-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 350px;
+      }
+      .signup-container h2 {
+        margin-bottom: 10px;
+      }
+      .signup-container img {
+        width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .signup-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .signup-container button {
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      .signup-container button:hover {
+        background-color: #ff4500;
+      }
+      .home-link {
+        display: inline-block;
+        margin-top: 15px;
+        color: #ff6600;
+        text-decoration: none;
+      }
+      .home-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="signup-container">
+      <img src="Images/icon5.png" alt="Cute Pet" />
+      <h2>Sign Up</h2>
+      <form action="RegistrationHandler.php" method="POST">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input
+          type="text"
+          name="contact"
+          placeholder="Contact Number"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <input
+          type="password"
+          name="confirm_password"
+          placeholder="Confirm Password"
+          required
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+      <a href="home.html" class="home-link">Back to Home</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption | Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #ff6600;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        .description {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .slider {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>🐶🐱 Adopt a Pet Today! 🐶🐱</header>
+    
+    <nav>
+        <a href="#">Home</a>
+        <a href="displaypets.php">Available Pets</a>
+        <a href="dashboard.php">My Posts</a>
+        <a href="#">Adoption Process</a>
+        <a href="#">Contact Us</a>
+		<a href="login.php">Login</a>
+    </nav>
+    
+    <div class="container">
+        <div class="description">
+            <p>Welcome to our pet adoption platform! Here, you can find adorable puppies and kittens looking for loving homes. Browse available pets or post an adoption listing to help find a perfect match!</p>
+        </div>
+        
+        <div class="slider">
+            <div class="slides">
+                <img src="Images/1.jpg" alt="">
+                <img src="Images/2.jpg" alt="">
+				<img src="Images/3.jpg" alt="">
+			  <img src="Images/4.jpg" alt="">
+				<img src="Images/5.jpg" alt="">
+				<img src="Images/6.jpg" alt="">
+				
+          </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Pet Adoption. All rights reserved. | <a href="#">Copyright</a></p>
+        <p>Follow us on: <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+    </footer>
+    
+    <script>
+        let index = 0;
+        function slideShow() {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+            index = (index + 1) % totalSlides;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+        setInterval(slideShow, 3000);
+    </script>
+</body>
+</html>
