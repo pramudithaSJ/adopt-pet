@@ -16,23 +16,28 @@
 ### 🔹 `users` Table
 ```sql
 CREATE TABLE `users` (
-  `userID` int(11) NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `email` varchar(100) DEFAULT NULL,
-  `contact` varchar(20) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `userID` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) DEFAULT NULL,
+  `email` VARCHAR(100) DEFAULT NULL,
+  `contact` VARCHAR(20) DEFAULT NULL,
+  `password` VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 ```
 
 ### 🔹 `posts` Table
 ```sql
 CREATE TABLE `posts` (
-  `postID` int(11) NOT NULL,
-  `petName` varchar(100) DEFAULT NULL,
-  `type` varchar(50) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `ownerID` int(11) DEFAULT NULL,
-  `isPublished` tinyint(1) DEFAULT NULL
+  `postID` INT(11) NOT NULL AUTO_INCREMENT,
+  `petName` VARCHAR(100) DEFAULT NULL,
+  `type` VARCHAR(50) DEFAULT NULL,
+  `description` TEXT DEFAULT NULL,
+  `image` VARCHAR(255) DEFAULT NULL,
+  `ownerID` INT(11) DEFAULT NULL,
+  `isPublished` TINYINT(1) DEFAULT NULL,
+  PRIMARY KEY (`postID`),
+  FOREIGN KEY (`ownerID`) REFERENCES `users`(`userID`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+```
 
